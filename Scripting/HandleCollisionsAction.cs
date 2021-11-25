@@ -10,10 +10,8 @@ namespace cse210_batter_csharp.Scripting
         {
 
         }
-
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-
         }
     }
 }

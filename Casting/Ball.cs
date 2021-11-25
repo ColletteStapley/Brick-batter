@@ -10,7 +10,7 @@ namespace cse210_batter_csharp.Casting
             SetWidth(Constants.BALL_WIDTH);
             SetHeight(Constants.BALL_HEIGHT);
             SetImage(Constants.IMAGE_BALL);
-            SetVelocity(new Point(0, -50));
+            SetVelocity(new Point(4, 4));
         }
     }
 }
