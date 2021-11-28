@@ -55,10 +55,10 @@ namespace cse210_batter_csharp
             script["output"] = new List<Action>();
             script["input"] = new List<Action>();
             script["update"] = new List<Action>();
-
-            DrawActorsAction drawActorsAction = new DrawActorsAction(outputService);
-            script["output"].Add(drawActorsAction);
-
+            
+            ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
+            script["input"].Add(controlActorsAction);
+            
             // TODO: Add additional actions here to handle the input, move the actors, handle collisions, etc.
             MoveActorsActions moveActorsActions = new MoveActorsActions();
             script["update"].Add(moveActorsActions);
@@ -66,8 +66,11 @@ namespace cse210_batter_csharp
             HandleOffScreenAction handleOffScreenAction = new HandleOffScreenAction();
             script["update"].Add(handleOffScreenAction);
 
-            ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
-            script["input"].Add(controlActorsAction);
+            HandleCollisionsActions handleCollisionsActions = new HandleCollisionsActions();
+            script["update"].Add(handleCollisionsActions);
+
+            DrawActorsAction drawActorsAction = new DrawActorsAction(outputService);
+            script["output"].Add(drawActorsAction);
 
             // Start up the game
             outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Batter", Constants.FRAME_RATE);
